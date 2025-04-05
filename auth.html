@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云溪数字化信件</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s;
+        }
+        .login-container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ccc;
+            color: white;
+            cursor: not-allowed;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .login-container button:enabled {
+            background-color: #555;
+            cursor: pointer;
+        }
+        .login-container button:hover:enabled {
+            background-color: #333;
+        }
+        .login-container button:active:enabled {
+            background-color: #000;
+            transform: scale(0.95);
+        }
+
+        .content-container {
+            display: none;
+            height: 100%;
+            text-align: left;
+            /* background: #fff; */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .image-container {
+            width: 300px; /* 控制图片容器的宽度 */
+            text-align: center;
+            height: 200px; /* 控制图片容器的高度 */
+            overflow: hidden; /* 隐藏超出容器的部分 */
+            border: 1px solid #ccc;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .zoomed {
+            transform: scale(2); /* 放大倍数 */
+        }
+        .content-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .content-container th, .content-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .content-container th {
+            background-color: #f2f2f2;
+        }
+        .view-original {
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .view-original:hover {
+            background-color: #333;
+        }
+        .view-original:active {
+            background-color: #000;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>请输入密码</h2>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="submitBtn" disabled onclick="checkPassword()">Submit</button>
+    </div>
+    <div class="content-container">
+        <h1>No.001</h1>
+        <h2>正文</h2>
+        首先，生日快乐！
+        <br>
+        感谢你的邀请！
+        <br>
+        这封卡应该在0406送到你的手里，等到我搓完小站的时候才想起，我可以邮过去啊！不过没大事，Marice快递可以作为更好的负距离接触运营商。<br>诗是极好的。从2024年10月起我这么想。你瞧，“世人....";"冬对夏...";"风令花.....",要是真说是“诗”也许不会受到太多的褒扬，对我目前的水平是这样的，但我也实实在在的学到了如何用寥寥几句将眼前的所见描述出来，尽管目前应该是......“极暮天裁凌云边，万里赤波纹分两界”。学校里用不了手机，我又没相机，但这14个字足以让我回忆起那个傍晚的所见，而非上百字的精细描述。省力！吗？并非。每个字都经得起推敲是极难的。<br>对于停云诗社（tyss.marice.top）包不会停运的，除非，没有并非。<br>书，是用于缔造村！好！剑！的原料之一，2024.10以来，我逐渐地花更多时间从纸获取信息而非新媒体，书也不再落满灰尘。说句搞笑的《儿童故事18首》从那段时间起才被我请回床底而不是靠着红楼梦。在你多多少少的渲染下，我好像逐渐找到了那种感觉。<br>“有勇气和耐心终生凝望黑暗的人，将最先在其中发现微弱的光明”——可汗《Metro2033》<br>画来！画来！可惜信纸不能用Ctrl CV贴上图片......画的好！画的妙！<br>声乐是一门艺术，shishishoti，kukulaha！<br>GamingTime！很好，也是被三百级的大佬带飞了。CODM其实一开始我比较抗拒，原因是从2021年开始玩是地铁是三称，换一撑太容易被晃晕了，但习惯以后是真的爽。<br>好了！祝心想事成、身体健康、万事如意<br>记得告诉我取件码！四位数，你猜在哪？
+        <h2>留言</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>收件人</th>
+                    <th>主题</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-04-05</td>
+                    <td>张何晨</td>
+                    <td>HappyBirthday</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        <table>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-04-05</td>
+                    <td>这是一个数字化信件展示页面，和信中所提到的“zhc.marice.top”内容不同</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        <h2>查看原图</h2>
+        <button class="view-original" onclick="viewOriginal()">查看原图</button>
+        <h2>鸟瞰</h2>
+        <div class="image-container" onclick="toggleZoom(this)">
+            <img src="https://wmimg.com/i/1452/2025/04/67f14ad778232.jpg" alt="Protected Image">
+        </div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const submitBtn = document.getElementById('submitBtn');
+        const contentContainer = document.querySelector('.content-container');
+        const loginContainer = document.querySelector('.login-container');
+
+        passwordInput.addEventListener('input', function() {
+            if (passwordInput.value.trim() !== '') {
+                submitBtn.disabled = false;
+                submitBtn.style.backgroundColor = '#555';
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.style.backgroundColor = '#ccc';
+            }
+        });
+
+        function checkPassword() {
+            const password = passwordInput.value;
+            const correctPassword = '71238922'; // Change this to your desired password
+            if (password === correctPassword) {
+                loginContainer.style.display = 'none';
+                contentContainer.style.display = 'block';
+                contentContainer.style.opacity = 0;
+                setTimeout(() => {
+                    contentContainer.style.opacity = 1;
+                }, 10);
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+        function toggleZoom(container) {
+            const img = container.querySelector('img');
+            img.classList.toggle('zoomed');
+        }
+        function viewOriginal() {
+            const img = document.querySelector('.image-container img');
+            img.classList.remove('zoomed');
+            const url = 'https://wmimg.com/i/1452/2025/04/67f14ad778232.jpg';
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
