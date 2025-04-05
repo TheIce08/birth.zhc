@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi！张何晨！</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="shell" id="shell">
+    <div class="header">
+      <h2 class="title">这一岁的好戏</h2>
+      <h3 class="subtitle">才正要开始</h3>
+      <h4 class="sub2title">By 云溪Marice</h4>
+      <h4 class="sub2title">稍稍放大以获得最好观感</h4>
+    </div>
+    <div class="timeline">
+    </div>
+  </div>
+
+  <script>
+    function createChild() {
+      let box = document.querySelector('.timeline')
+      const child = `
+        <div class="item" data-text="“停云霭霭，时雨蒙蒙">
+          <div class="content">
+            <img src="https://wmimg.com/i/1452/2025/04/67f1151b7ec4c.jpg" alt="" class="img">
+            <h2 class="content-title">诗  </h2>
+            <p class="content-desc">
+              诗是极好的。从2024.10起，我这么想。  
+              <br>
+              风令花在雪中飞
+              <br>
+              君在雪中飞花令
+              <br>
+              因为..诗人可以造字！（燕song）     
+            </p>
+          </div>
+        </div>
+        <div class="item" data-text="《秋》《悼枪王坠机》...">
+          <div class="content">
+            <img src="https://wmimg.com/i/1452/2025/04/67f119d3bfc62.jpg" alt="" class="img">
+            <h2 class="content-title">书  </h2>
+            <p class="content-desc">
+              《地铁2033》
+              <br>
+              是我2024年听过关于人生低谷最好的阐述
+              <br>
+              也是我的第一篇提笔的非任务读后感的中心
+              <br>
+              可以试着在《秋》中
+              <br>
+              加入 村！好！剑！
+              <br>
+              加入 市！好！剑！
+            </p>
+          </div>
+        </div>
+        <div class="item" data-text="《雯泫和他的大脑袋》">
+          <div class="content">
+            <img src="https://wmimg.com/i/1452/2025/04/67f11b01e6580.png" alt="" class="img">
+            <h2 class="content-title">画  </h2>
+            <p class="content-desc">
+              我单方面宣布 这是2024甚至于2025最伟大的作品之一
+              <br>
+              “他”而不是“它” ，因为他很灵           
+              <br>
+              每个字都要认真写！！！！！ 
+            </p>
+          </div>
+        </div>
+        <div class="item" data-text="《某弹跳舞曲🎵》">
+          <div class="content">
+            <img src="https://wmimg.com/i/1452/2025/04/67f11cc028205.jpg" alt="" class="img">
+            <h2 class="content-title">声  </h2>
+            <p class="content-desc">
+              shishi shuoti.kukulaha
+              <br>
+              →→↑→ →→↑↓ ~   
+              <br>
+              实际上，我真的搜不到原曲哈哈哈
+            </p>
+          </div>
+        </div>
+        <div class="item" data-text="停！云！诗社">
+          <div class="content">
+            <img src="https://wmimg.com/i/1452/2025/04/67f11d6aad598.png" alt="" class="img">
+            <h2 class="content-title">社团  </h2>
+            <p class="content-desc">
+              tyss.marice.top 不出意外 不会停运！
+              <br>    
+              我们只发布了创立声明
+              <br>          
+              从来没有发布过停运声明
+              <br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-text="快进入传送门！">
+          <div class="content">
+            <a href="sec.html"> <img border="0" src="https://wmimg.com/i/1452/2025/04/67f1205b4799f.png" alt="" class="img"></a>
+            <h2 class="content-title">点我↑  </h2>
+            <p class="content-desc">
+              嘿嘿嘿嘿嘿嘿嘿快点快点快点
+            </p>
+          </div>
+        </div>
+        <div class="item" data-text="快进入传送门！">
+          <div class="content">
+            <img border="0" src="" alt="" class="img"></a>
+            <h2 class="content-title">点传送门</h2>
+            <p class="content-desc">
+              点传送门点传送门点传送门点传送门点传送门
+              点传送门点传送门点传送门点传送门点传送门
+            </p>
+          </div>
+        </div>
+      `
+      box.innerHTML += child;
+    }
+    createChild();
+  </script>
+  <script src="./index.js"></script>
+
+</body>
+
+</html>
